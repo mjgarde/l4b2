@@ -4,13 +4,13 @@ project/
 │   
 │
 ├── includes/
-│   ├── functions.php       
-│   ├── session.php           
-│   └── auth.php              
+│   ├── staff/
+│   │   ├── auth.php
+│   ├── admin/
+│   │   ├── auth.php      
 │
 ├── admin/
 │   ├── dashboard.php
-│
 ├── staff/
 │   ├── dashboard.php
 │
