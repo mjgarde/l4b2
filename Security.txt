@@ -2,4 +2,5 @@
 2. Login Atempt
 3. Database Backup
 4. SQL Injection & Input Validation
-5. 
+5. Security Questionare
+6. Trusted Devices
