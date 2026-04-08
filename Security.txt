@@ -4,6 +4,10 @@
 4. SQL Injection & Input Validation
 5. Security Questionare
 6. Trusted Devices
+7. Session Management & Timeout
+
+Session Management & Timeout
+Automatic logout kapag inactive (e.g., 15-30 mins)
 
 Database Encryption
 Ini-encrypt ang data sa database para hindi mabasa kahit ma-access ng unauthorized users.
