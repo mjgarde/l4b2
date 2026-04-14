@@ -1,0 +1,3 @@
+sudo apt install sqlitebrowser
+flutter pub add sqflite
+flutter pub add path
