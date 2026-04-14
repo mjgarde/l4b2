@@ -1,3 +1,8 @@
+
 sudo apt install sqlitebrowser
 flutter pub add sqflite
 flutter pub add path
+
+flutter pub add hive
+flutter pub add hive_flutter
+flutter pub add path_provider
