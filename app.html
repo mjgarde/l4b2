@@ -1,21 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Snack in Save - Order</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: #f0f0f0; overflow: hidden; }
-        iframe {
-            width: 100%;
-            height: 100vh;
-            border: none;
-        }
+        body { margin: 0; overflow: hidden; background: #f0f0f0; }
+        iframe { width: 100%; height: 100vh; border: none; }
     </style>
 </head>
 <body>
-    <!-- Relative path: gagamit ng parehong host/port kung saan naka‑host ang app.html -->
-    <iframe src="index.php"></iframe>
+    <!-- Gamit ang hostname na "black.local" – hindi na magbabago -->
+    <iframe src="http://black.local/app/index.php"></iframe>
 </body>
 </html>
