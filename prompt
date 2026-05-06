@@ -1,0 +1,60 @@
+---
+
+🧠 🥇 MAIN PROMPT (BEST START)
+
+I want to build an AI-based coffee shop monitoring system using Python, OpenCV, and YOLO.
+
+Features:
+
+1. Detect and count customers using a webcam
+2. Track each person with a unique ID
+3. Measure how long each customer stays (dwell time)
+4. Display bounding boxes with timer above each person
+5. Show total number of customers currently inside
+6. Save data (entry time, exit time, duration) to a database (SQLite)
+
+Requirements:
+
+- Use YOLOv8 for person detection
+- Use a tracking algorithm (like DeepSORT or built-in tracker)
+- Real-time webcam feed
+- Clean and simple code structure
+- Beginner-friendly explanation
+
+Please provide:
+
+- Full working Python code
+- Step-by-step explanation
+- Required libraries and installation commands
+---
+
+🧠 🥈 NEXT PROMPT (FOR DASHBOARD)
+
+Now create a simple web dashboard using Flask that connects to my AI system.
+
+Features:
+
+- Show total customers today
+- Show average dwell time
+- Display list of customers with duration
+- Simple UI (HTML + CSS)
+
+Use SQLite as database.
+
+Explain how to connect it with the detection system.
+---
+
+🧠 🥉 ADVANCED PROMPT (PANG WOW)
+
+Add advanced features to my AI system:
+
+1. Show live labels like:
+   - "Customer 1 - 5 minutes"
+2. Detect if a person is standing or moving (basic action recognition)
+3. Generate simple AI insights like:
+   - Peak hours
+   - Average stay time
+4. Add overlay text on video feed
+
+Keep it optimized for a laptop with 8GB RAM.
+---
