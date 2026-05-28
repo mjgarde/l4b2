@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Juan Dela Cruz — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #ffffff;
+    --bg2: #f5f5f3;
+    --text: #111110;
+    --muted: #888780;
+    --hint: #b4b2a9;
+    --border: rgba(0,0,0,0.1);
+    --border-md: rgba(0,0,0,0.18);
+    --green: #1D9E75;
+    --green-bg: #E1F5EE;
+    --green-dark: #0F6E56;
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #111110;
+      --bg2: #1a1a18;
+      --text: #f0ede8;
+      --muted: #888780;
+      --hint: #5f5e5a;
+      --border: rgba(255,255,255,0.1);
+      --border-md: rgba(255,255,255,0.18);
+      --green-bg: #04342C;
+      --green-dark: #5DCAA5;
+    }
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Outfit', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1.25rem;
+  }
+
+  .pf {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  /* Animations */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.35; }
+  }
+
+  .a1 { animation: fadeUp 0.55s ease both; }
+  .a2 { animation: fadeUp 0.55s 0.1s ease both; }
+  .a3 { animation: fadeUp 0.55s 0.2s ease both; }
+  .a4 { animation: fadeUp 0.55s 0.3s ease both; }
+  .a5 { animation: fadeUp 0.55s 0.4s ease both; }
+  .a6 { animation: fadeUp 0.55s 0.5s ease both; }
+
+  /* Top bar */
+  .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+  }
+  .logo {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    color: var(--text);
+  }
+  .avail {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.73rem;
+    font-weight: 500;
+    color: var(--green-dark);
+    background: var(--green-bg);
+    padding: 0.28rem 0.75rem;
+    border-radius: 999px;
+  }
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--green);
+    animation: pulse 2s infinite;
+  }
+
+  /* Hero */
+  .hero { margin-bottom: 2rem; }
+  .eyebrow {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--hint);
+    margin-bottom: 0.6rem;
+  }
+  .big-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.05;
+    color: var(--text);
+    margin-bottom: 0.85rem;
+  }
+  .big-name em { font-style: normal; color: var(--green); }
+  .bio {
+    font-size: 0.92rem;
+    color: var(--muted);
+    line-height: 1.8;
+    max-width: 460px;
+    margin-bottom: 1.5rem;
+  }
+  .cta-row { display: flex; gap: 0.65rem; }
+  .btn-p {
+    background: var(--text);
+    color: var(--bg);
+    border: none;
+    border-radius: 999px;
+    padding: 0.52rem 1.4rem;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.84rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity 0.18s;
+  }
+  .btn-p:hover { opacity: 0.75; }
+  .btn-o {
+    background: transparent;
+    color: var(--text);
+    border: 0.5px solid var(--border-md);
+    border-radius: 999px;
+    padding: 0.52rem 1.4rem;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.84rem;
+    cursor: pointer;
+    transition: background 0.18s;
+  }
+  .btn-o:hover { background: var(--bg2); }
+
+  /* Separator */
+  .sep {
+    width: 100%;
+    height: 0.5px;
+    background: var(--border);
+    margin: 1.75rem 0;
+  }
+
+  /* Stats */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    margin-bottom: 1.75rem;
+  }
+  .stat {
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 0.85rem 1rem;
+    text-align: center;
+    background: var(--bg);
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .stat:hover { border-color: var(--border-md); background: var(--bg2); }
+  .stat-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.72rem;
+    color: var(--hint);
+    margin-top: 0.25rem;
+  }
+
+  /* Skills */
+  .sec-label {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--hint);
+    margin-bottom: 0.85rem;
+  }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 0.6rem;
+    margin-bottom: 1.75rem;
+  }
+  .sk {
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 0.85rem 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg);
+    transition: border-color 0.2s, transform 0.2s, background 0.2s;
+    cursor: default;
+    position: relative;
+  }
+  .sk:hover {
+    border-color: var(--green);
+    background: var(--green-bg);
+    transform: translateY(-4px);
+  }
+  .sk i {
+    font-size: 24px;
+    color: var(--muted);
+    transition: color 0.2s;
+  }
+  .sk:hover i { color: var(--green-dark); }
+  /* Tooltip */
+  .sk::after {
+    content: attr(data-tip);
+    position: absolute;
+    bottom: calc(100% + 7px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--text);
+    color: var(--bg);
+    font-size: 0.68rem;
+    font-weight: 500;
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s;
+  }
+  .sk:hover::after { opacity: 1; }
+
+  /* Social */
+  .soc-row {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.75rem;
+  }
+  .soc {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 0.5px solid var(--border-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--muted);
+    transition: color 0.18s, border-color 0.18s, transform 0.18s, background 0.18s;
+  }
+  .soc:hover {
+    color: var(--green-dark);
+    border-color: var(--green);
+    background: var(--green-bg);
+    transform: translateY(-3px);
+  }
+  .soc i { font-size: 18px; }
+
+  /* Footer */
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 0.5px solid var(--border);
+    padding-top: 1rem;
+  }
+  .footer-copy { font-size: 0.74rem; color: var(--hint); }
+  .footer-tag  { font-size: 0.73rem; color: var(--hint); }
+</style>
+</head>
+<body>
+<div class="pf">
+
+  <div class="top-bar a1">
+    <span class="logo">JDC.DEV</span>
+    <span class="avail"><span class="dot"></span>Available for work</span>
+  </div>
+
+  <div class="hero a2">
+    <p class="eyebrow">Software Developer</p>
+    <h1 class="big-name">Michael<br>Jude <em>Garde.</em></h1>
+    <p class="bio">I build clean, fast, and purposeful web applications. Passionate about turning ideas into real products that people enjoy using — front to back.</p>
+    <div class="cta-row">
+      <button class="btn-p">Download CV</button>
+      <button class="btn-o">Get in touch</button>
+    </div>
+  </div>
+
+  <div class="sep a3"></div>
+
+  <div class="stats a3">
+    <div class="stat"><div class="stat-num">12+</div><div class="stat-label">Projects</div></div>
+    <div class="stat"><div class="stat-num">3yr</div><div class="stat-label">Experience</div></div>
+    <div class="stat"><div class="stat-num">8+</div><div class="stat-label">Tech used</div></div>
+  </div>
+
+  <p class="sec-label a4">Skills</p>
+  <div class="skills-grid a4">
+    <div class="sk" data-tip="HTML / CSS"><i class="ti ti-brand-html5"></i></div>
+    <div class="sk" data-tip="JavaScript"><i class="ti ti-brand-javascript"></i></div>
+    <div class="sk" data-tip="React"><i class="ti ti-brand-react"></i></div>
+    <div class="sk" data-tip="Node.js"><i class="ti ti-brand-nodejs"></i></div>
+    <div class="sk" data-tip="Python"><i class="ti ti-brand-python"></i></div>
+    <div class="sk" data-tip="PostgreSQL"><i class="ti ti-database"></i></div>
+    <div class="sk" data-tip="Figma"><i class="ti ti-brand-figma"></i></div>
+    <div class="sk" data-tip="Git"><i class="ti ti-brand-git"></i></div>
+  </div>
+
+  <div class="sep a5"></div>
+
+  <p class="sec-label a5">Connect</p>
+  <div class="soc-row a5">
+    <a class="soc" href="#" title="GitHub"><i class="ti ti-brand-github"></i></a>
+    <a class="soc" href="#" title="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
+    <a class="soc" href="#" title="Facebook"><i class="ti ti-brand-facebook"></i></a>
+    <a class="soc" href="#" title="Email"><i class="ti ti-mail"></i></a>
+  </div>
+
+  <div class="footer a6">
+    <span class="footer-copy">© 2026 Juan Dela Cruz</span>
+    <span class="footer-tag">Davao City, PH</span>
+  </div>
+
+</div>
+</body>
+</html>
