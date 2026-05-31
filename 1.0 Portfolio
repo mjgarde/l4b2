@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Michael Jude Garde — Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body { font-family: "DM Sans", sans-serif; background: #f0efed; }
+    .card { border: none; border-radius: 20px; }
+    .hero-name { font-family: "DM Serif Display", serif; font-size: 28px; }
+    .avatar-placeholder {
+      width: 150px; height: 150px; border-radius: 12px;
+      background: #d0cdc8; object-fit: cover; flex-shrink: 0;
+    }
+    .nav-pill a { font-size: 14px; font-weight: 500; color: #888; text-decoration: none; padding-bottom: 4px; }
+    .nav-pill a.active { color: #1a1a1a; border-bottom: 2px solid #1a1a1a; }
+    .tag { background: #f0efed; border-radius: 6px; padding: 4px 10px; font-size: 11.5px; font-weight: 500; color: #333; }
+    .project-thumb {
+      aspect-ratio: 4/3; border-radius: 12px; background: #e8e6e2;
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: center; gap: 6px; opacity: .5; transition: transform .2s;
+    }
+    .project-item:hover .project-thumb { transform: scale(1.02); }
+    .arrow-btn {
+      width: 28px; height: 28px; border-radius: 50%;
+      border: 1.5px solid #ddd; display: flex;
+      align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .social-icon {
+      font-size: 16px;
+      color: #888;
+      transition: color .2s;
+    }
+    .social-icon:hover { color: #1a1a1a; }
+  </style>
+</head>
+
+<body class="py-3 px-3">
+  <div class="mx-auto d-flex flex-column gap-3" style="max-width: 600px">
+
+    <!-- NAV -->
+    <header>
+      <nav class="card p-3" aria-label="Main navigation">
+        <ul class="nav-pill d-flex justify-content-center gap-4 list-unstyled mb-0">
+          <li><a href="#" class="active" aria-current="page">Home</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="d-flex flex-column gap-3">
+
+      <!-- HERO -->
+      <section class="card p-4" aria-label="Profile">
+        <div class="d-flex gap-3">
+          <img src="photo.png" class="avatar-placeholder" alt="Michael Jude Garde profile photo" />
+          <div class="flex-grow-1">
+            <h1 class="hero-name mb-1">Michael Jude Garde</h1>
+            <p class="text-muted small mb-3">Software Developer</p>
+            <div class="d-flex flex-wrap gap-2 mb-3">
+              <a href="#" class="btn btn-sm btn-outline-secondary rounded-2">
+                <i class="fa-solid fa-download me-1" aria-hidden="true"></i>Download CV
+              </a>
+            </div>
+            <ul class="d-flex flex-wrap gap-3 list-unstyled mb-0">
+              <li>
+                <a href="https://github.com/michaeljude-web" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                  <i class="fa-brands fa-github social-icon"></i>
+                </a>
+              </li>
+              <li>
+                <a href="mailto:gardemichaeljude@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email">
+                  <i class="fa-solid fa-envelope social-icon"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://facebook.com/michaeljude-web" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                  <i class="fa-brands fa-facebook social-icon"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                  <i class="fa-brands fa-linkedin social-icon"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- OVERVIEW + SKILLS -->
+      <section class="card" aria-label="Overview and Skills">
+        <div class="row g-0">
+          <div class="col-6 p-4">
+            <h2 class="h6 fw-semibold mb-2">Overview</h2>
+            <p class="text-muted small lh-base fw-light mb-0">
+              Software Developer with experience building modern web applications, passionate about clean code, intuitive interfaces, and scalable systems from concept through to deployment.
+            </p>
+          </div>
+          <div class="col-auto d-flex align-items-stretch">
+            <div style="width:1px; background:#e8e6e2; margin: 24px 0;"></div>
+          </div>
+          <div class="col p-4">
+            <h2 class="h6 fw-semibold mb-3">Skills</h2>
+            <div class="d-flex flex-wrap gap-1">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Bootstrap</span>
+              <span class="tag">PHP</span>
+              <span class="tag">Python</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">Figma</span>
+              <span class="tag">WordPress</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section class="card p-4" aria-label="Projects">
+        <h2 class="h6 fw-semibold mb-3">Projects</h2>
+        <div class="row g-3">
+
+          <article class="col-6 project-item">
+            <div class="project-thumb mb-2">
+              <i class="fa-regular fa-image fa-lg text-secondary" aria-hidden="true"></i>
+              <span class="small text-secondary">Image</span>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <h3 class="small fw-medium mb-0">Club Rova</h3>
+                <p class="text-muted mb-0" style="font-size:11px">Streetwear</p>
+              </div>
+              <div class="arrow-btn" aria-hidden="true"><i class="fa-solid fa-arrow-right small"></i></div>
+            </div>
+          </article>
+
+          <article class="col-6 project-item">
+            <div class="project-thumb mb-2">
+              <i class="fa-regular fa-image fa-lg text-secondary" aria-hidden="true"></i>
+              <span class="small text-secondary">Image</span>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <h3 class="small fw-medium mb-0">Sorne</h3>
+                <p class="text-muted mb-0" style="font-size:11px">Personal Care</p>
+              </div>
+              <div class="arrow-btn" aria-hidden="true"><i class="fa-solid fa-arrow-right small"></i></div>
+            </div>
+          </article>
+
+          <article class="col-6 project-item">
+            <div class="project-thumb mb-2">
+              <i class="fa-regular fa-image fa-lg text-secondary" aria-hidden="true"></i>
+              <span class="small text-secondary">Image</span>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <h3 class="small fw-medium mb-0">Azra</h3>
+                <p class="text-muted mb-0" style="font-size:11px">Interior Design</p>
+              </div>
+              <div class="arrow-btn" aria-hidden="true"><i class="fa-solid fa-arrow-right small"></i></div>
+            </div>
+          </article>
+
+          <article class="col-6 project-item">
+            <div class="project-thumb mb-2">
+              <i class="fa-regular fa-image fa-lg text-secondary" aria-hidden="true"></i>
+              <span class="small text-secondary">Image</span>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <h3 class="small fw-medium mb-0">Okars</h3>
+                <p class="text-muted mb-0" style="font-size:11px">Eyewear</p>
+              </div>
+              <div class="arrow-btn" aria-hidden="true"><i class="fa-solid fa-arrow-right small"></i></div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+    </main>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
